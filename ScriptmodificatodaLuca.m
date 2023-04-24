@@ -1,0 +1,214 @@
+%close all
+clear all
+clc
+
+%!!!!aggiungere al path la cartella script aggiornata!!!!!!
+
+[filename,path] = uigetfile('*.*');
+
+pathstr=strcat(path,filename);
+
+
+ta = TermoAnalizer(pathstr);
+%%
+ta.correctfs
+%%
+
+ ta.normalizzaTemp(24,10);
+
+%%
+Tmax=ta.TMaxVsTime;
+
+matrix=[Tmax,ta.time'];
+
+writematrix(matrix,"Acciaio vernice STEP7.xls")
+%%
+ta.TMaxVsFrame
+%%
+ta.TMaxVsTime
+%%
+frameMax=95;
+tol=0;
+mmpxratio=0.1607;%%155
+ta.GetSpotSizeByFirstMax(frameMax,tol,mmpxratio)
+
+
+
+
+
+
+
+
+
+
+
+%% compilare questa sezione solo una volta
+
+frame_start=112;
+frame_end=1409;
+ta.SelectTimeInterval(frame_start,frame_end);
+
+
+
+
+%%
+ta.SVDdenoising;
+
+
+
+
+%%
+ta.surf
+%%
+ta.getMaxTemp
+
+%%
+%ta.LockIn
+freq=1;
+ta.LockInAmplifier(freq)
+%ta.LockIn
+%%
+% reiterare per trovare meglio il centro
+ %[Hz]
+xcmm=12.72;
+ycmm=22.2;
+mmpxratio=0.119;%%
+
+
+xc=round(xcmm/mmpxratio);
+yc=round(ycmm/mmpxratio);
+
+
+tol=0.3;
+% tol2=0.05,
+
+
+% [Cut_x,yp,Cut_y,xp] =  ta.LockinResults(freq,xc,yc,mmpxratio,tol)
+ [Cut_x,yp,Cut_y,xp]=ta.LockinAmplifierResults(freq,xc,yc,mmpxratio,tol)
+ %ta.LockinResults(freq,xc,yc,mmpxratio,tol)
+%%
+
+laserspotdiameter=1.1;%[mm]
+expectedDiffusivity=4; %[mm2/s]
+
+ [Dx,Dy,Davg]=ta.evaluateDiffusivity(freq,xc,yc,mmpxratio,laserspotdiameter,expectedDiffusivity,tol)
+
+
+%%
+
+%%
+ figure
+
+plot(ypAB,CutXAB,ypRicotto,CutXRicotto+3.099)
+
+%%
+%tagliare prima la parte inutile
+
+
+% s=size(ta.temp,3);
+%%
+% 
+%             t=1/ta.metadata.FrameRate*[0:s-1]';
+%                     
+% [maxT, time] = ta.getMaxTemp(); % prendo l'istante di tempo in cui la temperatura raggiunge il massimo (pixel per pixel)
+% 
+%             [r,c] = size(time);
+% 
+%             COS=2.*cos(freq*2*pi()*t);
+%             SIN=2.*sin(freq*2*pi()*t);
+% 
+%             for i=1:r
+%                 for j=1:c
+% 
+% 
+%                     F=squeeze(ta.temp(i,j,:)-mean(ta.temp(i,j,:))).*COS;
+% 
+%                     G=squeeze(ta.temp(i,j,:)-mean(ta.temp(i,j,:))).*SIN;
+% 
+% 
+%                     X=mean(F);
+%                     Y=mean(G);
+% 
+%                     A(i,j)=sqrt(X^2+Y^2);
+%                     P(i,j)=atan2(Y,X);
+% 
+%                 end
+%             end
+
+
+
+% 
+% %%
+% if diff(Cut_y)>1
+% 
+% end
+% %%
+% 
+% plot(diff(Cut_y))
+% 
+% %%  DA QUA IN POI SPORCIZIA
+% 
+% Tensore=ta.getTemp;
+% %%
+% Temperatura=ta.TMaxVsTime;
+% 
+% 
+% 
+% 
+% %%
+% ta.getMaxTemp
+% 
+% %% find center
+% y_c=74;%orizzontale
+% x_c=65;%verticale
+% 
+% % plottare temperatura media 
+% s=10; %span
+% 
+% for i=1:size(Tensore,3)
+% 
+% T_media(i)=mean2(Tensore([x_c-s:x_c+s],[y_c-s:y_c+s],i));
+% %T_media_denoised(i)=mean2(Tensore_denoised([x_c-s:x_c+s],[y_c-s:y_c+s],i));
+% end
+% 
+% 
+% figure;legend;%hold on;
+% plot(T_media);
+% %plot(T_media_denoised);
+% 
+% %%
+% 
+% t2=234; %frame del picco
+% t1=121; %frame dell'inizio
+% 
+% mappa=ta.evalHeating2(t1,t2);
+% 
+% %%
+% mappa=ta.evalHeatingArea(t1,t2);
+% 
+% 
+% 
+% %%
+% [maxT, time] = ta.getMaxTemp(); % prendo l'istante di tempo in cui la temperatura raggiunge il massimo (pixel per pixel)
+% 
+% [r,c] = size(time);
+% 
+% mappa = NaN(size(time));
+% 
+% Tmin=mean2(ta.temp(:,:,1));
+% 
+% for ii = 1:r
+%     for jj = 1:c
+% 
+%         T_cut=ta.temp(ii,jj,T1:T2)-Tmin;
+%         %Normalizza pixel per pixel
+%         T_norm=squeeze(T_cut./max(T_cut,[],3));
+% 
+%         %trova i punti di meta riscaldamento
+%         tMezzi = find(T_norm>=0.5,1) ;
+% 
+%         mappa(ii,jj)= tMezzi-T1/ta.metadata.FrameRate;
+%     end
+% end
+%         surf(mappa,EdgeColor='none')
+% view (2)
