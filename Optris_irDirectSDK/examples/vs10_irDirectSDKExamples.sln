@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irimagerShow", "directshow\vs_project\vs10_irimagerShow.vcxproj", "{023C4E0E-308C-477D-9438-24DC290F20A4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irimagerShowOOP", "directshow\vs_project\vs10_irimagerShowOOP.vcxproj", "{7CDBAE1B-02CA-4629-931C-C46B18F1769A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irImagerShowNet", "directshow.net\vs_project\vs10_irImagerShowNet.vcxproj", "{774EEF89-CF6C-4DEC-B2A0-A1AA81E24500}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serializeRaw", "minimal\vs_project\vs10_serializeRaw.vcxproj", "{65AE9955-43D5-4411-81D6-CCDCE0CC6E86}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irDirectBindingTCPShow", "directbinding\vs_project\vs10_irDirectBindingTCPShow.vcxproj", "{964C7118-9EFF-4DCF-8724-3AC9D9DBE055}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irDirectBindingUSBShow", "directbinding\vs_project\vs10_irDirectBindingUSBShow.vcxproj", "{D90D7086-EF3F-426E-856D-0659C75B4246}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{023C4E0E-308C-477D-9438-24DC290F20A4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{023C4E0E-308C-477D-9438-24DC290F20A4}.Debug|Win32.Build.0 = Debug|Win32
+		{023C4E0E-308C-477D-9438-24DC290F20A4}.Release|Win32.ActiveCfg = Release|Win32
+		{023C4E0E-308C-477D-9438-24DC290F20A4}.Release|Win32.Build.0 = Release|Win32
+		{7CDBAE1B-02CA-4629-931C-C46B18F1769A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7CDBAE1B-02CA-4629-931C-C46B18F1769A}.Debug|Win32.Build.0 = Debug|Win32
+		{7CDBAE1B-02CA-4629-931C-C46B18F1769A}.Release|Win32.ActiveCfg = Release|Win32
+		{7CDBAE1B-02CA-4629-931C-C46B18F1769A}.Release|Win32.Build.0 = Release|Win32
+		{774EEF89-CF6C-4DEC-B2A0-A1AA81E24500}.Debug|Win32.ActiveCfg = Debug|Win32
+		{774EEF89-CF6C-4DEC-B2A0-A1AA81E24500}.Debug|Win32.Build.0 = Debug|Win32
+		{774EEF89-CF6C-4DEC-B2A0-A1AA81E24500}.Release|Win32.ActiveCfg = Release|Win32
+		{774EEF89-CF6C-4DEC-B2A0-A1AA81E24500}.Release|Win32.Build.0 = Release|Win32
+		{65AE9955-43D5-4411-81D6-CCDCE0CC6E86}.Debug|Win32.ActiveCfg = Debug|Win32
+		{65AE9955-43D5-4411-81D6-CCDCE0CC6E86}.Debug|Win32.Build.0 = Debug|Win32
+		{65AE9955-43D5-4411-81D6-CCDCE0CC6E86}.Release|Win32.ActiveCfg = Release|Win32
+		{65AE9955-43D5-4411-81D6-CCDCE0CC6E86}.Release|Win32.Build.0 = Release|Win32
+		{964C7118-9EFF-4DCF-8724-3AC9D9DBE055}.Debug|Win32.ActiveCfg = Debug|Win32
+		{964C7118-9EFF-4DCF-8724-3AC9D9DBE055}.Debug|Win32.Build.0 = Debug|Win32
+		{964C7118-9EFF-4DCF-8724-3AC9D9DBE055}.Release|Win32.ActiveCfg = Release|Win32
+		{964C7118-9EFF-4DCF-8724-3AC9D9DBE055}.Release|Win32.Build.0 = Release|Win32
+		{D90D7086-EF3F-426E-856D-0659C75B4246}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D90D7086-EF3F-426E-856D-0659C75B4246}.Debug|Win32.Build.0 = Debug|Win32
+		{D90D7086-EF3F-426E-856D-0659C75B4246}.Release|Win32.ActiveCfg = Release|Win32
+		{D90D7086-EF3F-426E-856D-0659C75B4246}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

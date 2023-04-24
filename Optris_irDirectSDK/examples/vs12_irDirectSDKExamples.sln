@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irDirectBindingTCPShow", "directbinding\vs_project\vs12_irDirectBindingTCPShow.vcxproj", "{86DCB5A9-1C92-460D-98E6-7A8CBD8CF956}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irDirectBindingUSBShow", "directbinding\vs_project\vs12_irDirectBindingUSBShow.vcxproj", "{29C23C86-9A6F-46D0-8C90-8228157D60B8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irimagerShow", "directshow\vs_project\vs12_irimagerShow.vcxproj", "{38F2271D-DB94-4722-824F-333B5E823395}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irImagerShowNet", "directshow.net\vs_project\vs12_irImagerShowNet.vcxproj", "{26910A7D-7C6B-4A2A-8EC2-134483E3E355}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irimagerShowOOP", "directshow\vs_project\vs12_irimagerShowOOP.vcxproj", "{B2885A4D-A5F4-42CB-B0F6-4E53E167929A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serializeRaw", "minimal\vs_project\vs12_serializeRaw.vcxproj", "{7F5F0C5E-1270-4AE7-8FC9-38930474FD5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86DCB5A9-1C92-460D-98E6-7A8CBD8CF956}.Debug|Win32.ActiveCfg = Debug|Win32
+		{86DCB5A9-1C92-460D-98E6-7A8CBD8CF956}.Debug|Win32.Build.0 = Debug|Win32
+		{86DCB5A9-1C92-460D-98E6-7A8CBD8CF956}.Release|Win32.ActiveCfg = Release|Win32
+		{86DCB5A9-1C92-460D-98E6-7A8CBD8CF956}.Release|Win32.Build.0 = Release|Win32
+		{29C23C86-9A6F-46D0-8C90-8228157D60B8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{29C23C86-9A6F-46D0-8C90-8228157D60B8}.Debug|Win32.Build.0 = Debug|Win32
+		{29C23C86-9A6F-46D0-8C90-8228157D60B8}.Release|Win32.ActiveCfg = Release|Win32
+		{29C23C86-9A6F-46D0-8C90-8228157D60B8}.Release|Win32.Build.0 = Release|Win32
+		{38F2271D-DB94-4722-824F-333B5E823395}.Debug|Win32.ActiveCfg = Debug|Win32
+		{38F2271D-DB94-4722-824F-333B5E823395}.Debug|Win32.Build.0 = Debug|Win32
+		{38F2271D-DB94-4722-824F-333B5E823395}.Release|Win32.ActiveCfg = Release|Win32
+		{38F2271D-DB94-4722-824F-333B5E823395}.Release|Win32.Build.0 = Release|Win32
+		{26910A7D-7C6B-4A2A-8EC2-134483E3E355}.Debug|Win32.ActiveCfg = Debug|Win32
+		{26910A7D-7C6B-4A2A-8EC2-134483E3E355}.Debug|Win32.Build.0 = Debug|Win32
+		{26910A7D-7C6B-4A2A-8EC2-134483E3E355}.Release|Win32.ActiveCfg = Release|Win32
+		{26910A7D-7C6B-4A2A-8EC2-134483E3E355}.Release|Win32.Build.0 = Release|Win32
+		{B2885A4D-A5F4-42CB-B0F6-4E53E167929A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B2885A4D-A5F4-42CB-B0F6-4E53E167929A}.Debug|Win32.Build.0 = Debug|Win32
+		{B2885A4D-A5F4-42CB-B0F6-4E53E167929A}.Release|Win32.ActiveCfg = Release|Win32
+		{B2885A4D-A5F4-42CB-B0F6-4E53E167929A}.Release|Win32.Build.0 = Release|Win32
+		{7F5F0C5E-1270-4AE7-8FC9-38930474FD5D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F5F0C5E-1270-4AE7-8FC9-38930474FD5D}.Debug|Win32.Build.0 = Debug|Win32
+		{7F5F0C5E-1270-4AE7-8FC9-38930474FD5D}.Release|Win32.ActiveCfg = Release|Win32
+		{7F5F0C5E-1270-4AE7-8FC9-38930474FD5D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
