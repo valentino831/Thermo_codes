@@ -8,4 +8,4 @@ Le funzioni presenti nella folder script dovranno essere commentate
 
 I codici .m presenti su main dovranno essere descriti su readme come segue:
 
-automatizzato.m -- analisi e salvataggio automatico dell'analisi dei test su Resistance Spot Weld
+RSW_automated.m -- analisi e salvataggio automatico dell'analisi dei test su Resistance Spot Weld
