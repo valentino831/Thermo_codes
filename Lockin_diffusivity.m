@@ -1,4 +1,4 @@
-%close all
+close all
 clear all
 clc
 
@@ -11,28 +11,25 @@ pathstr=strcat(path,filename);
 
 ta = TermoAnalizer(pathstr);
 %%
-ta.correctfs
+% ta.correctfs
 %%
-
- ta.normalizzaTemp(24,10);
-
+% 
+% Tmax=ta.TMaxVsTime;
+% 
+% matrix=[Tmax,ta.time'];
+% 
+% writematrix(matrix,"Acciaio vernice STEP7.xls")
 %%
-Tmax=ta.TMaxVsTime;
-
-matrix=[Tmax,ta.time'];
-
-writematrix(matrix,"Acciaio vernice STEP7.xls")
-%%
-ta.TMaxVsFrame
-%%
-ta.TMaxVsTime
-%%
-frameMax=95;
-tol=0;
-mmpxratio=0.1607;%%155
-ta.GetSpotSizeByFirstMax(frameMax,tol,mmpxratio)
-
-
+ ta.TMaxVsFrame
+% %%
+% ta.TMaxVsTime
+% %%
+% frameMax=95;
+% tol=0;
+% mmpxratio=0.1607;%%155
+% ta.GetSpotSizeByFirstMax(frameMax,tol,mmpxratio)
+% 
+% 
 
 
 
@@ -44,39 +41,41 @@ ta.GetSpotSizeByFirstMax(frameMax,tol,mmpxratio)
 
 %% compilare questa sezione solo una volta
 
-frame_start=112;
-frame_end=1409;
-ta.SelectTimeInterval(frame_start,frame_end);
-
-
-
-
+frame_start=645;
+frame_end=6762;
 %%
-ta.SVDdenoising;
+% ta.SelectTimeInterval(frame_start,frame_end);
+% 
+% 
+% 
+% 
+% %%
+% ta.SVDdenoising;
 
 
 
 
+% %%
+% ta.surf
+% %%
+  ta.getMaxTemp
 %%
-ta.surf
-%%
-ta.getMaxTemp
-
+  [frame_start,frame_end]=ta.cercaPeriodo(55);
 %%
 %ta.LockIn
 freq=1;
-ta.LockInAmplifier(freq)
+ta.LockInAmplifier(freq,frame_start,frame_end)
 %ta.LockIn
 %%
 % reiterare per trovare meglio il centro
  %[Hz]
-xcmm=12.72;
-ycmm=22.2;
-mmpxratio=0.119;%%
+% xcmm=12.72;
+% ycmm=22.2;
+mmpxratio=0.144;%%
 
 
-xc=round(xcmm/mmpxratio);
-yc=round(ycmm/mmpxratio);
+%xc=round(xcmm/mmpxratio);
+%yc=round(ycmm/mmpxratio);
 
 
 tol=0.3;
@@ -84,22 +83,22 @@ tol=0.3;
 
 
 % [Cut_x,yp,Cut_y,xp] =  ta.LockinResults(freq,xc,yc,mmpxratio,tol)
- [Cut_x,yp,Cut_y,xp]=ta.LockinAmplifierResults(freq,xc,yc,mmpxratio,tol)
+ [Cut_x,yp,Cut_y,xp,xc,yc]=ta.LockinAmplifierResults(freq,mmpxratio,tol)
  %ta.LockinResults(freq,xc,yc,mmpxratio,tol)
 %%
 
-laserspotdiameter=1.1;%[mm]
-expectedDiffusivity=4; %[mm2/s]
+laserspotdiameter=1.5;%[mm]
+expectedDiffusivity=15; %[mm2/s]
 
  [Dx,Dy,Davg]=ta.evaluateDiffusivity(freq,xc,yc,mmpxratio,laserspotdiameter,expectedDiffusivity,tol)
 
 
 %%
-
-%%
- figure
-
-plot(ypAB,CutXAB,ypRicotto,CutXRicotto+3.099)
+% 
+% %%
+%  figure
+% 
+% plot(ypAB,CutXAB,ypRicotto,CutXRicotto+3.099)
 
 %%
 %tagliare prima la parte inutile

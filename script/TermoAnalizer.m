@@ -356,7 +356,7 @@ classdef TermoAnalizer < handle
         end
 
 
-        function  [Cut_x,yp,Cut_y,xp]=LockinAmplifierResults(obj,freq,mmpxratio,tol, save)
+        function  [Cut_x,yp,Cut_y,xp,xc,yc]=LockinAmplifierResults(obj,freq,mmpxratio,tol, save)
 
             if ~exist("save", "var")
                 save = 0;
